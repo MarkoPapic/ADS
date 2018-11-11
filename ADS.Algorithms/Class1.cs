@@ -2,7 +2,7 @@
 
 namespace ADS.Algorithms
 {
-    public class Class1
-    {
+    class Class1 {
+
     }
 }

@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADS.DataStructures", "ADS.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADS.Algorithms", "ADS.Algorithms\ADS.Algorithms.csproj", "{A5B812A3-2DD5-45E7-B901-BFD26CF7F160}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9040F1CB-4ACF-49AA-A55D-1DEB2FD5C714}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADS.DataStructures.Tests", "Tests\ADS.DataStructures.Tests\ADS.DataStructures.Tests.csproj", "{22E10B45-6D60-4BEF-A37A-7338B8DEC44A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +29,12 @@ Global
 		{A5B812A3-2DD5-45E7-B901-BFD26CF7F160}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5B812A3-2DD5-45E7-B901-BFD26CF7F160}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5B812A3-2DD5-45E7-B901-BFD26CF7F160}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22E10B45-6D60-4BEF-A37A-7338B8DEC44A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E10B45-6D60-4BEF-A37A-7338B8DEC44A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E10B45-6D60-4BEF-A37A-7338B8DEC44A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E10B45-6D60-4BEF-A37A-7338B8DEC44A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22E10B45-6D60-4BEF-A37A-7338B8DEC44A} = {9040F1CB-4ACF-49AA-A55D-1DEB2FD5C714}
 	EndGlobalSection
 EndGlobal

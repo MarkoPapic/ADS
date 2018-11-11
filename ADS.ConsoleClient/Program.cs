@@ -1,4 +1,5 @@
 ﻿using System;
+using ADS.DataStructures;
 
 namespace ADS.ConsoleClient
 {
@@ -6,7 +7,7 @@ namespace ADS.ConsoleClient
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello world!");
         }
     }
 }
