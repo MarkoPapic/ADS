@@ -10,7 +10,7 @@ namespace ADS.DataStructures.Tests.MinHeap
         public void HappyPath_MinCorrect() {
             //Arrange
             int[] elements = new int[] { 1, -5, 24, 561, -300, 15, 36, 82, 4, 50};
-            MinHeap<int> minHeap = new MinHeap<int>();
+            MinHeap<int> minHeap = new MinHeap<int>((a, b) => a.CompareTo(b));
 
             //Act && assert
             for (int i = 0; i < elements.Length; i++) {
@@ -26,7 +26,7 @@ namespace ADS.DataStructures.Tests.MinHeap
         {
             //Arrange
             int[] elements = new int[] { 1, -5, 24, 561, -300, 15, 36, 82, 4, 50 };
-            MinHeap<int> minHeap = new MinHeap<int>();
+            MinHeap<int> minHeap = new MinHeap<int>((a, b) => a.CompareTo(b));
 
             //Act && assert
             for (int i = 0; i < elements.Length; i++)

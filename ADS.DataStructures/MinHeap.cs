@@ -2,15 +2,17 @@
 
 namespace ADS.DataStructures
 {
-    public class MinHeap<T> where T : IComparable
+    public class MinHeap<T>
     {
         private readonly DynamicArray<T> data;
+        private readonly Func<T, T, int> compareFunc;
 
         public int Count => this.data.Length;
 
-        public MinHeap()
+        public MinHeap(Func<T, T, int> compareFunc)
         {
             data = new DynamicArray<T>();
+            this.compareFunc = compareFunc;
         }
 
         public void Insert(T element)
@@ -89,7 +91,8 @@ namespace ADS.DataStructures
         private int GetLeftChildIndex(int parentIndex) => 2 * parentIndex + 1;
 
         private bool GreaterThan(T a, T b) {
-            return a.CompareTo(b) > 0;
+            //return a.CompareTo(b) > 0;
+            return this.compareFunc(a, b) > 0;
         }
     }
 }
