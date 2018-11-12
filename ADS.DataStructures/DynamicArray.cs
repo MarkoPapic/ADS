@@ -40,7 +40,7 @@ namespace ADS.DataStructures
 
         public T RemoveLast() {
             if (this._length == 0)
-                throw new InvalidOperationException("Unable to remove from an empty array");
+                throw new InvalidOperationException("Unable to remove from an empty array.");
 
             T el = this.data[--this._length];
             if (this.ShouldDecreaseCapacity())

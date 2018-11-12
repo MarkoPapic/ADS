@@ -4,7 +4,7 @@ namespace ADS.DataStructures
 {
     public class MinHeap<T> where T : IComparable
     {
-        private DynamicArray<T> data;
+        private readonly DynamicArray<T> data;
 
         public int Count => this.data.Length;
 
@@ -21,7 +21,7 @@ namespace ADS.DataStructures
 
         public T PopMin() {
             if (this.data.Length == 0)
-                throw new InvalidOperationException("Unable to remove from an empty heap");
+                throw new InvalidOperationException("Unable to remove from an empty heap.");
 
             T result = this.data[0];
 
@@ -34,7 +34,7 @@ namespace ADS.DataStructures
 
         public T PeekMin() {
             if (this.data.Length == 0)
-                throw new InvalidOperationException("Unable to remove from an empty heap");
+                throw new InvalidOperationException("Heap empty.");
 
             return this.data[0];
         }

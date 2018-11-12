@@ -14,7 +14,7 @@ namespace ADS.DataStructures.Tests.DynamicArray
         [InlineData(-23)]
         [InlineData(600)]
         public void HappyPath_ElementAdded(int value) {
-            //Arrrange
+            //Arrange
             DynamicArray<int> arr = new DynamicArray<int>();
 
             //Act
