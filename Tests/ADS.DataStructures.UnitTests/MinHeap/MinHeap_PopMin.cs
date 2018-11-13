@@ -1,43 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Xunit;
 
-namespace ADS.DataStructures.Tests.PriorityQueue
+namespace ADS.DataStructures.UnitTests.MinHeap
 {
-    public class PriorityQueue_Dequeue
+    public class MinHeap_PopMin
     {
         [Fact]
-        public void EmptyQueue_ExceptionThrown()
-        {
+        public void EmptyHeap_ExceptionThrown() {
             //Arrange
-            PriorityQueue<int> priorityQueue = new PriorityQueue<int>((a, b) => a.CompareTo(b));
+            MinHeap<int> minHeap = new MinHeap<int>((a, b) => a.CompareTo(b));
 
             //Act
-            Action act = () => priorityQueue.Dequeue();
+            Action act = () => minHeap.PeekMin();
 
             //Assert
             Assert.Throws<InvalidOperationException>(act);
         }
 
         [Fact]
-        public void HappyPath_MinReturned()
-        {
+        public void HappyPath_MinReturned() {
             //Arrange
             int[] elements = new int[] { 1, -5, 24, 561, -300, 15, 36, 82, 4, 50 };
-            PriorityQueue<int> priorityQueue = new PriorityQueue<int>((a, b) => a.CompareTo(b));
+            MinHeap<int> minHeap = new MinHeap<int>((a, b) => a.CompareTo(b));
 
-            foreach (int el in elements)
-                priorityQueue.Enqueue(el);
+            foreach(int el in elements)
+                minHeap.Insert(el);
 
             //Act && assert
             int[] elementsLeft = new int[elements.Length];
             elements.CopyTo(elementsLeft, 0);
-            for (int i = 0; i < elements.Length; i++)
-            {
+            for (int i = 0; i < elements.Length; i++) {
                 int actualMinEl = elementsLeft.Min();
-                int minEl = priorityQueue.Dequeue();
+                int minEl = minHeap.PopMin();
                 Assert.Equal(actualMinEl, minEl);
                 elementsLeft = elementsLeft.Where(x => x != actualMinEl).ToArray();
             }
@@ -48,16 +43,16 @@ namespace ADS.DataStructures.Tests.PriorityQueue
         {
             //Arrange
             int[] elements = new int[] { 1, -5, 24, 561, -300, 15, 36, 82, 4, 50 };
-            PriorityQueue<int> priorityQueue = new PriorityQueue<int>((a, b) => a.CompareTo(b));
+            MinHeap<int> minHeap = new MinHeap<int>((a, b) => a.CompareTo(b));
 
             foreach (int el in elements)
-                priorityQueue.Enqueue(el);
+                minHeap.Insert(el);
 
             //Act
-            int minEl = priorityQueue.Dequeue();
+            int minEl = minHeap.PopMin();
 
             //Assert
-            Assert.Equal(9, priorityQueue.Count);
+            Assert.Equal(9, minHeap.Count);
         }
     }
 }

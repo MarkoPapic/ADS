@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace ADS.DataStructures.Tests.Stack
+namespace ADS.DataStructures.UnitTests.Stack
 {
     public class Stack_Pop
     {

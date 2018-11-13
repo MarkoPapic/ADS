@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Xunit;
 
-namespace ADS.DataStructures.Tests.PriorityQueue
+namespace ADS.DataStructures.UnitTests.PriorityQueue
 {
     public class PriorityQueue_Enqueue
     {

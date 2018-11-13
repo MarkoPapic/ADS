@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace ADS.DataStructures.Tests.DynamicArray
+namespace ADS.DataStructures.UnitTests.DynamicArray
 {
     public class DynamicArray_Indexer
     {

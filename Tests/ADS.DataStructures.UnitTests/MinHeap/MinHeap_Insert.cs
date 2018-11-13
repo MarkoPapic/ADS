@@ -2,7 +2,7 @@
 using System.Linq;
 using Xunit;
 
-namespace ADS.DataStructures.Tests.MinHeap
+namespace ADS.DataStructures.UnitTests.MinHeap
 {
     public class MinHeap_Insert
     {
