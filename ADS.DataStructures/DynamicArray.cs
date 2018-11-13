@@ -4,7 +4,7 @@ namespace ADS.DataStructures
 {
     public class DynamicArray<T>
     {
-        private const int INITIAL_ARRAY_SIZE = 50;
+        private const int INITIAL_ARRAY_SIZE = 16;
         private const int INCREASE_DEGREE = 2;
         private const int DECREASE_FRACTION_TRESHOLD = 4;
 
