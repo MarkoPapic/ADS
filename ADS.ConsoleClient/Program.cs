@@ -7,6 +7,9 @@ namespace ADS.ConsoleClient
     {
         static void Main(string[] args)
         {
+            SpeedTestsRunner speedTestsRunner = new SpeedTestsRunner();
+            speedTestsRunner.RunAll();
+
             Console.ReadKey();
         }
     }

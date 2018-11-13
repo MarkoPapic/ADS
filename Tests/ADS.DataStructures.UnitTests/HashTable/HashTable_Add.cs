@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace ADS.DataStructures.Tests.HashTable
+namespace ADS.DataStructures.UnitTests.HashTable
 {
     public class HashTable_Add
     {
