@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ADS.DataStructures
 {
-    public class DynamicArray<T>
+    public class DynamicArray<T> : IEnumerable<T>
     {
         private const int INITIAL_ARRAY_SIZE = 16;
         private const int INCREASE_DEGREE = 2;
@@ -65,7 +68,46 @@ namespace ADS.DataStructures
             this.data = newDataArray;
         }
 
+        public IEnumerator<T> GetEnumerator() {
+            return new DynamicArrayEnumerator(this);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() {
+            return this.GetEnumerator();
+        }
+
+        public class DynamicArrayEnumerator : IEnumerator<T>
+        {
+            private readonly DynamicArray<T> parent;
+            private int currentIndex;
+            private T currentElement;
+
+            public T Current => this.currentElement;
+
+            object IEnumerator.Current => Current;
+
+            public DynamicArrayEnumerator(DynamicArray<T> parent) {
+                this.parent = parent;
+                this.currentIndex = -1;
+                this.currentElement = default(T);
+            }
+
+            public bool MoveNext()
+            {
+                if (++this.currentIndex >= this.parent.Length)
+                    return false;
+                else
+                {
+                    this.currentElement = this.parent[this.currentIndex];
+                    return true;
+                }
+            }
+
+            public void Reset() => this.currentIndex = -1;
+
+            public void Dispose() {}
+        }
+
         //TODO: Implement equality methods and operators
-        //TODO: Implement enumerator
     }
 }

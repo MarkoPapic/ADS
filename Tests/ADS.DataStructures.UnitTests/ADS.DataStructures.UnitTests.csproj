@@ -16,4 +16,7 @@
     <ProjectReference Include="..\..\ADS.DataStructures\ADS.DataStructures.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Graph\" />
+  </ItemGroup>
 </Project>
