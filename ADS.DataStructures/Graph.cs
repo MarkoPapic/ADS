@@ -1,19 +1,23 @@
-﻿using System;
+﻿using ADS.DataStructures.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace ADS.DataStructures
 {
-    public class Graph
+    public class Graph : IGraph
     {
-        private readonly int V;
+        private readonly int _v;
         private readonly DynamicArray<int>[] adj;
+
+        public int V => this._v;
 
         public Graph(int V)
         {
-            this.V = V;
-            this.adj = new DynamicArray<int>[V];
-            for (int i = 0; i < V; i++)
+            this._v = V;
+            //We avoid using index 0, because we save it for special cases
+            this.adj = new DynamicArray<int>[V + 1];
+            for (int i = 1; i <= V; i++)
                 adj[i] = new DynamicArray<int>();
         }
 
@@ -34,8 +38,9 @@ namespace ADS.DataStructures
             return this.adj[v].ToArray(); //Create a copy to prevent someone from modifying the adjacency list
         }
 
-        private void ThrowIfOutOfRange(int index) {
-            if (index < 0 || index >= this.V)
+        private void ThrowIfOutOfRange(int index)
+        {
+            if (index < 1 || index > this.V)
                 throw new IndexOutOfRangeException();
         }
     }

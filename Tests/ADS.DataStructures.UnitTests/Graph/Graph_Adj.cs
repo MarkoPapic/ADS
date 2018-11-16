@@ -38,9 +38,6 @@ namespace ADS.DataStructures.UnitTests.Graph
                 graph.AddEdge(edge.Item1, edge.Item2);
 
             //Assert
-            int[] expectedEdges0 = new int[] { };
-            int[] actualEdges0 = graph.Adj(0).ToArray();
-
             int[] expectedEdges1 = new int[] { 4, 5, 8 };
             int[] actualEdges1 = graph.Adj(1).OrderBy(x => x).ToArray();
 
@@ -68,7 +65,6 @@ namespace ADS.DataStructures.UnitTests.Graph
             int[] expectedEdges9 = new int[] { 3 };
             int[] actualEdges9 = graph.Adj(9).OrderBy(x => x).ToArray();
 
-            Assert.Equal(expectedEdges0, actualEdges0);
             Assert.Equal(expectedEdges1, actualEdges1);
             Assert.Equal(expectedEdges2, actualEdges2);
             Assert.Equal(expectedEdges3, actualEdges3);

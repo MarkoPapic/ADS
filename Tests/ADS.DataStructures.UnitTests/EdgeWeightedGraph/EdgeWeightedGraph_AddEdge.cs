@@ -60,9 +60,6 @@ namespace ADS.DataStructures.UnitTests.EdgeWeightedGraph
                 ewGraph.AddEdge(edge);
 
             //Assert
-            Edge[] expectedEdges0 = new Edge[] { };
-            Edge[] actualEdges0 = ewGraph.Adj(0).ToArray();
-
             Edge[] expectedEdges1 = new Edge[] { edges[0], edges[1], edges[3] };
             Edge[] actualEdges1 = ewGraph.Adj(1).ToArray();
 
@@ -90,7 +87,6 @@ namespace ADS.DataStructures.UnitTests.EdgeWeightedGraph
             Edge[] expectedEdges9 = new Edge[] { edges[7] };
             Edge[] actualEdges9 = ewGraph.Adj(9).ToArray();
 
-            Assert.Equal(expectedEdges0, actualEdges0);
             Assert.Equal(expectedEdges1, actualEdges1);
             Assert.Equal(expectedEdges2, actualEdges2);
             Assert.Equal(expectedEdges3, actualEdges3);

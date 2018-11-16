@@ -6,14 +6,17 @@ namespace ADS.DataStructures
 {
     public class EdgeWeightedGraph
     {
-        private readonly int V;
+        private readonly int _v;
         private readonly List<Edge>[] adj;
+
+        public int V => this._v;
 
         public EdgeWeightedGraph(int V)
         {
-            this.V = V;
-            this.adj = new List<Edge>[V];
-            for (int i = 0; i < V; i++)
+            this._v = V;
+            //We avoid using index 0, because we save it for special cases
+            this.adj = new List<Edge>[V + 1];
+            for (int i = 1; i <= V; i++)
                 adj[i] = new List<Edge>();
         }
 
@@ -38,7 +41,7 @@ namespace ADS.DataStructures
 
         private void ThrowIfOutOfRange(int index)
         {
-            if (index < 0 || index >= this.V)
+            if (index < 1 || index > this.V)
                 throw new IndexOutOfRangeException();
         }
     }

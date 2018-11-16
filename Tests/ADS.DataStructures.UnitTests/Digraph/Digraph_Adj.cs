@@ -58,9 +58,6 @@ namespace ADS.DataStructures.UnitTests.Digraph
                 digraph.AddEdge(edge.Item1, edge.Item2);
 
             //Assert
-            int[] expectedEdges0 = new int[] { };
-            int[] actualEdges0 = digraph.Adj(0).ToArray();
-
             int[] expectedEdges1 = new int[] { 4, 5, 8 };
             int[] actualEdges1 = digraph.Adj(1).OrderBy(x => x).ToArray();
 
@@ -88,7 +85,6 @@ namespace ADS.DataStructures.UnitTests.Digraph
             int[] expectedEdges9 = new int[] { };
             int[] actualEdges9 = digraph.Adj(9).ToArray();
 
-            Assert.Equal(expectedEdges0, actualEdges0);
             Assert.Equal(expectedEdges1, actualEdges1);
             Assert.Equal(expectedEdges2, actualEdges2);
             Assert.Equal(expectedEdges3, actualEdges3);
