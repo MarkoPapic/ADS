@@ -9,7 +9,7 @@ namespace ADS.DataStructures.UnitTests.MinHeap
         [Fact]
         public void EmptyHeap_ExceptionThrown() {
             //Arrange
-            MinHeap<int> minHeap = new MinHeap<int>((a, b) => a.CompareTo(b));
+            MinHeap<int> minHeap = new MinHeap<int>();
 
             //Act
             Action act = () => minHeap.PeekMin();
@@ -22,7 +22,7 @@ namespace ADS.DataStructures.UnitTests.MinHeap
         public void HappyPath_MinReturned() {
             //Arrange
             int[] elements = new int[] { 1, -5, 24, 561, -300, 15, 36, 82, 4, 50 };
-            MinHeap<int> minHeap = new MinHeap<int>((a, b) => a.CompareTo(b));
+            MinHeap<int> minHeap = new MinHeap<int>();
 
             foreach(int el in elements)
                 minHeap.Insert(el);
@@ -43,7 +43,7 @@ namespace ADS.DataStructures.UnitTests.MinHeap
         {
             //Arrange
             int[] elements = new int[] { 1, -5, 24, 561, -300, 15, 36, 82, 4, 50 };
-            MinHeap<int> minHeap = new MinHeap<int>((a, b) => a.CompareTo(b));
+            MinHeap<int> minHeap = new MinHeap<int>();
 
             foreach (int el in elements)
                 minHeap.Insert(el);

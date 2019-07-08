@@ -16,7 +16,7 @@ namespace ADS.DataStructures.SpeedTests.MinHeap
         public bool Insert()
         {
             //Prepare
-            MinHeap<GeoLocation> minHeap = new MinHeap<GeoLocation>(CompareGeolocations);
+            MinHeap<GeoLocation> minHeap = new MinHeap<GeoLocation>();
 
             //Execute
 
@@ -57,7 +57,7 @@ namespace ADS.DataStructures.SpeedTests.MinHeap
         public bool PopMin()
         {
             //Prepare
-            MinHeap<GeoLocation> minHeap = new MinHeap<GeoLocation>(CompareGeolocations);
+            MinHeap<GeoLocation> minHeap = new MinHeap<GeoLocation>();
 
             //Execute
 
@@ -93,18 +93,6 @@ namespace ADS.DataStructures.SpeedTests.MinHeap
             bool nMPassed = nMTime < nKNonZeroTime * 2; //Because log(M) ~ 2 * log(K)
             bool passed = nTenPassed && nKPassed && nMPassed;
             return passed;
-        }
-
-        private int CompareGeolocations(GeoLocation a, GeoLocation b)
-        {
-            double aSum = a.Latitude + a.Longitude;
-            double bSum = b.Latitude + b.Longitude;
-
-            if (aSum < bSum)
-                return -1;
-            else if (aSum == bSum)
-                return 0;
-            return 1;
         }
     }
 }

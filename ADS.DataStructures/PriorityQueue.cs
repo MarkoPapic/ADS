@@ -2,15 +2,15 @@
 
 namespace ADS.DataStructures
 {
-    public class PriorityQueue<T>
+    public class PriorityQueue<T> where T : IComparable
     {
         private readonly MinHeap<T> data;
 
         public int Count => this.data.Count;
 
-        public PriorityQueue(Func<T, T, int> compareFunc)
+        public PriorityQueue()
         {
-            data = new MinHeap<T>(compareFunc);
+            data = new MinHeap<T>();
         }
 
         public void Enqueue(T element)
