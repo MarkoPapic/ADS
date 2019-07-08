@@ -16,7 +16,7 @@ namespace ADS.ConsoleClient
             foreach ((int, int) edge in edges)
                 graph.AddEdge(edge.Item1, edge.Item2);
 
-            graph.TraverseBfs(8, a => Console.WriteLine(a));
+            TraverseBfs.Traverse(graph, 8, a => Console.WriteLine(a));
 
             Console.ReadKey();
         }

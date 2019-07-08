@@ -1,11 +1,11 @@
 ﻿using ADS.DataStructures;
-using ADS.Algorithms.Graphs;
 using System.Collections.Generic;
 using Xunit;
+using static ADS.Algorithms.Graphs.TraverseDfs;
 
 namespace ADS.Algorithms.UnitTests
 {
-    public class Dfs_TraverseDfs
+    public class TraverseDfs_Traverse
     {
         [Fact]
         public void HappyPath_ConnectedVerticesTraversed()
@@ -19,7 +19,7 @@ namespace ADS.Algorithms.UnitTests
             List<int> traversedElements = new List<int>();
 
             //Act
-            graph.TraverseDfs(8, v => traversedElements.Add(v));
+            graph.Traverse(8, v => traversedElements.Add(v));
 
             //Assert
             Assert.Equal(expectedTraversedElements, traversedElements);
