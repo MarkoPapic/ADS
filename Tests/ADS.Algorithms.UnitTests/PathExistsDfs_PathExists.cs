@@ -19,9 +19,10 @@ namespace ADS.Algorithms.UnitTests
             Graph graph = new Graph(10);
             foreach ((int, int) edge in edges)
                 graph.AddEdge(edge.Item1, edge.Item2);
+            PathExsitsDfs pathExsitsDfs = new PathExsitsDfs();
 
             //Act
-            bool pathExists = graph.PathExists(8, value);
+            bool pathExists = pathExsitsDfs.PathExists(graph, 8, value);
 
             //Assert
             Assert.False(pathExists);
@@ -39,9 +40,10 @@ namespace ADS.Algorithms.UnitTests
             Graph graph = new Graph(10);
             foreach ((int, int) edge in edges)
                 graph.AddEdge(edge.Item1, edge.Item2);
+            PathExsitsDfs pathExsitsDfs = new PathExsitsDfs();
 
             //Act
-            bool pathExists = graph.PathExists(8, value);
+            bool pathExists = pathExsitsDfs.PathExists(graph, 8, value);
 
             //Assert
             Assert.True(pathExists);

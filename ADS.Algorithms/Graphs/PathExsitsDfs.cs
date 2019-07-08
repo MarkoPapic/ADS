@@ -12,8 +12,10 @@ namespace ADS.Algorithms.Graphs
     /// <remarks>
     /// Initialization complexity: 0
     /// </remarks>
-    public static class PathExsitsDfs
+    public class PathExsitsDfs
     {
+        private bool[] visited;
+
         /// <summary>
         /// Returns whether there is a path from vertex <paramref name="s"/> to vertex <paramref name="d"/>.
         /// </summary>
@@ -23,24 +25,24 @@ namespace ADS.Algorithms.Graphs
         /// <remarks>
         /// Compleixty: N
         /// </remarks>
-        public static bool PathExists(this IGraph graph, int s, int d)
+        public bool PathExists(IGraph graph, int s, int d)
         {
-            bool[] visited = new bool[graph.V + 1];
-            DynamicArray<int> toVisit = new DynamicArray<int> { s };
-            visited[s] = true;
-            while (toVisit.Length > 0)
-            {
-                int current = toVisit.RemoveLast();
-                IEnumerable<int> children = graph.Adj(current);
-                foreach (int child in children)
-                    if (!visited[child])
-                    {
-                        toVisit.Add(child);
-                        visited[child] = true;
-                    }
-                if (current == d)
-                    return true;
-            }
+            visited = new bool[graph.V + 1];
+            return Dfs(graph, s, d);
+        }
+
+        private bool Dfs(IGraph graph, int v, int destination)
+        {
+            if (v == destination)
+                return true;
+            visited[v] = true;
+            foreach (int w in graph.Adj(v))
+                if (!visited[w])
+                {
+                    bool pathExists = Dfs(graph, w, destination);
+                    if (pathExists)
+                        return true;
+                }
             return false;
         }
     }

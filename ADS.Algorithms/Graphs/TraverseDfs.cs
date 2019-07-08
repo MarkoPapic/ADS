@@ -32,9 +32,7 @@ namespace ADS.Algorithms.Graphs
             visited[v] = true;
             foreach (int w in graph.Adj(v))
                 if (!visited[w])
-                {
                     Dfs(graph, w, action);
-                }
         }
     }
 }
