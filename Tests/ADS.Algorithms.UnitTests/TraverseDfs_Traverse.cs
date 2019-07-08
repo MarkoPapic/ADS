@@ -1,7 +1,7 @@
 ﻿using ADS.DataStructures;
+using ADS.Algorithms.Graphs;
 using System.Collections.Generic;
 using Xunit;
-using static ADS.Algorithms.Graphs.TraverseDfs;
 
 namespace ADS.Algorithms.UnitTests
 {
@@ -15,11 +15,12 @@ namespace ADS.Algorithms.UnitTests
             Graph graph = new Graph(9);
             foreach ((int, int) edge in edges)
                 graph.AddEdge(edge.Item1, edge.Item2);
-            List<int> expectedTraversedElements = new List<int> { 8, 4, 1, 5, 3, 9, 7, 2 };
+            List<int> expectedTraversedElements = new List<int> { 8, 1, 4, 5, 2, 3, 7, 9 };
             List<int> traversedElements = new List<int>();
+            TraverseDfs traverseDfs = new TraverseDfs();
 
             //Act
-            graph.Traverse(8, v => traversedElements.Add(v));
+            traverseDfs.Traverse(graph, 8, v => traversedElements.Add(v));
 
             //Assert
             Assert.Equal(expectedTraversedElements, traversedElements);
