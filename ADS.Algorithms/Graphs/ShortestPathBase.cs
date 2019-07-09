@@ -20,6 +20,9 @@ namespace ADS.Algorithms.Graphs
             edgeTo = new DirectedEdge[G.V + 1];
             distTo = new double[G.V + 1];
             this.s = s;
+            for (int v = 1; v <= G.V; v++)
+                this.distTo[v] = double.PositiveInfinity;
+            this.distTo[s] = 0.0;
         }
 
         public IEnumerable<DirectedEdge> PathTo(int v)

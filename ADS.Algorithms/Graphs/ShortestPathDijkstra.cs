@@ -16,10 +16,6 @@ namespace ADS.Algorithms.Graphs
         public ShortestPathDijkstra(EdgeWeightedDigraph G, int s) : base(G, s)
         {
             pq = new WeightedPriorityQueue<int, double>();
-            for (int v = 1; v <= G.V; v++)
-                this.distTo[v] = double.PositiveInfinity;
-            this.distTo[s] = 0.0;
-
             pq.Enqueue(s, 0.0);
             while(pq.Count > 0)
             {
