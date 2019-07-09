@@ -26,12 +26,15 @@ namespace ADS.Algorithms.Graphs
         {
             LinkedList<DirectedEdge> result = new LinkedList<DirectedEdge>();
             DirectedEdge currentEdge = edgeTo[v];
-            while (currentEdge.From != s)
+            if (currentEdge != null)
             {
+                while (currentEdge.From != s)
+                {
+                    result.AddFirst(currentEdge);
+                    currentEdge = edgeTo[currentEdge.From];
+                }
                 result.AddFirst(currentEdge);
-                currentEdge = edgeTo[currentEdge.From];
             }
-            result.AddFirst(currentEdge);
             return result;
         }
 

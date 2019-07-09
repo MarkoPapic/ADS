@@ -5,6 +5,10 @@ using System.Text;
 
 namespace ADS.Algorithms.Graphs
 {
+    /// <summary>
+    /// Finds the shortest paths from a referent vertex to all other vertices in a weighted digraph. It only works for graphs with nonnegative weights.
+    /// If the graph is unweighted, BFS is more efficient solution.
+    /// </summary>
     public class ShortestPathDijkstra : ShortestPathBase
     {
         private readonly WeightedPriorityQueue<int, double> pq;
