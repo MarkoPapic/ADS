@@ -34,8 +34,7 @@ namespace ADS.DataStructures
         {
             ThrowIfOutOfRange(v);
 
-            //return this.adj[v];
-            return this.adj[v].ToArray(); //Create a copy to prevent someone from modifying the adjacency list
+            return this.adj[v];
         }
 
         private void ThrowIfOutOfRange(int index)

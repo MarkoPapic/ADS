@@ -90,7 +90,6 @@ namespace ADS.DataStructures
 
         private bool GreaterThan(T a, T b) {
             return a.CompareTo(b) > 0;
-            //return this.compareFunc(a, b) > 0;
         }
     }
 }
