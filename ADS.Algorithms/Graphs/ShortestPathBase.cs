@@ -25,16 +25,8 @@ namespace ADS.Algorithms.Graphs
         public IEnumerable<DirectedEdge> PathTo(int v)
         {
             LinkedList<DirectedEdge> result = new LinkedList<DirectedEdge>();
-            DirectedEdge currentEdge = edgeTo[v];
-            if (currentEdge != null)
-            {
-                while (currentEdge.From != s)
-                {
-                    result.AddFirst(currentEdge);
-                    currentEdge = edgeTo[currentEdge.From];
-                }
-                result.AddFirst(currentEdge);
-            }
+            for (DirectedEdge e = edgeTo[v]; e != null; e = edgeTo[e.From])
+                result.AddFirst(e);
             return result;
         }
 
