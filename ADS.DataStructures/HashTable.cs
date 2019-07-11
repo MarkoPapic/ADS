@@ -129,7 +129,7 @@ namespace ADS.DataStructures
                 this.data = new List<(TBucketKey, TBucketValue)>();
             }
 
-            //We return wether the boolean value that indicates wether that key already existed in the bucket.
+            //We return the boolean value that indicates wether that key already existed in the bucket.
             //This is to be able to update the Count property from HashTable class on every Insert/Remove.
             //This way, instead of iterating through each bucket and summing elements, we can return hash table count in constant time.
             public bool Insert((TBucketKey, TBucketValue) element)
