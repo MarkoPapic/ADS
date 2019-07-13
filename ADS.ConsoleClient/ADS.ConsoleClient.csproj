@@ -1,13 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ADS.Algorithms\ADS.Algorithms.csproj" />
-    <ProjectReference Include="..\ADS.DataStructures\ADS.DataStructures.csproj" />
-    <ProjectReference Include="..\Tests\ADS.DataStructures.SpeedTests\ADS.DataStructures.SpeedTests.csproj" />
+    <ProjectReference Include="..\ADS\ADS.csproj" />
+    <ProjectReference Include="..\Tests\ADS.SpeedTests\ADS.SpeedTests.csproj" />
   </ItemGroup>
 </Project>

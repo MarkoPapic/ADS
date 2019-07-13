@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.0.1</Version>
+    <Authors>MarkoPapic</Authors>
+    <Company />
+    <Product />
+    <Description>C# implementations of some algorithms and data structures.</Description>
+    <PackageLicenseUrl>https://github.com/MarkoPapic/ADS/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/MarkoPapic/ADS</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MarkoPapic/ADS</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>
