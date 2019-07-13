@@ -5,4 +5,9 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ADS.Algorithms\ADS.Algorithms.csproj" />
+    <ProjectReference Include="..\ADS.DataStructures\ADS.DataStructures.csproj" />
+    <ProjectReference Include="..\Tests\ADS.DataStructures.SpeedTests\ADS.DataStructures.SpeedTests.csproj" />
+  </ItemGroup>
 </Project>
