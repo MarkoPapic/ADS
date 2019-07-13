@@ -1,5 +1,7 @@
 # Algorithms & Data Structures
 
+![Nuget](https://img.shields.io/nuget/v/ADS.svg)
+
 C# implementations of some algorithms and data structures.
 
 
