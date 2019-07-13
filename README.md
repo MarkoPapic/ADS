@@ -2,7 +2,24 @@
 
 C# implementations of some algorithms and data structures.
 
-## Data structures
+
+## Installation
+
+Visual Studio Package Manager Console:
+
+```
+Install-Package ADS -Version 0.0.1
+```
+
+dotnet CLI:
+
+```
+dotnet add package ADS --version 0.0.1
+```
+
+## Content
+
+### Data structures
 
 * Dynamic array
 * Stack
@@ -17,7 +34,7 @@ C# implementations of some algorithms and data structures.
 * Edge-weighted graph
 * Edge-weighted digraph
 
-## Algorithms
+### Algorithms
 
 * Graph algorithms
   * Traverse using DFS
@@ -29,4 +46,3 @@ C# implementations of some algorithms and data structures.
   * Find the shortest path between the two vertices in a graph with nonnegative weights using Dijkstra's algorithm
   * Find the shortest path between the two vertices in a direct acyclic graph using topological sort
 * Find the maximum sub-array of a 1D array using Kadane's algorithm
-
