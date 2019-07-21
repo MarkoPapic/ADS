@@ -27,17 +27,17 @@ namespace ADS.Algorithms.Sorting
             {
                 //Go from left to right as long as elements are smaller than pivot (where they are supposed to be)
                 while (IsLessThan(a[++i], pivot))
-                    if (i == hi)
+                    if (i == hi) //Pivot is the maximum of the unprocessed elements
                         break;
                 //Go from right to left as long as elements are larger than pivot (where they are supposed to be)
                 while (IsLessThan(pivot, a[--j]))
-                    if (j == lo)
+                    if (j == lo) //Pivot is the minimum of the unprocessed elements
                         break;
                 if (i >= j) //We reached the end of partitioning
                     break;
                 //If we reached this line, one of the 2 scenarios happened
-                //Scenario 1: break hit in nested while loops, which means pivot is the maximum element of the array. Note that if break is hit in the first loop, it has to be hit in the second loop too.
-                //In this scenario, i went to the end and j went to the beginning (pivot index). Swap will just move pivot from first index to the last index (where it belongs)
+                //Scenario 1: break hit in nested while loops, which means pivot is the minimum or maximum element of the array.
+                //In this scenario, i == j. Swap will do nothing.
                 //Scenario 2: Loop condition returned false for both nested loops.
                 //In this scenario, a[i] is larger (or equal) than pivot and a[j] is smaller (or equal) than pivot. We just swap them.
                 Swap(a, i, j);
