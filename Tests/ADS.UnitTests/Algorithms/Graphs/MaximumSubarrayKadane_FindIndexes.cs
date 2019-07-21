@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ADS.Algorithms;
 using Xunit;
 
-namespace ADS.Algorithms.UnitTests
+namespace ADS.UnitTests.Algorithms.Graphs
 {
     public class MaximumSubarrayKadane_FindIndexes
     {

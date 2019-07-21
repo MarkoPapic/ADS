@@ -1,23 +1,21 @@
 ﻿using ADS.Algorithms.Sorting;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Xunit;
 
-namespace ADS.UnitTests.Algorithms
+namespace ADS.UnitTests.Algorithms.Sorting
 {
-    public class MergeSort_Sort
+    public class QuickSort_Sort
     {
         [Fact]
         public void Test()
         {
             //Arrange
             int[] elements = { 2, 50, -4, 194, -3004, 2890, 67, 68, 900, 350, -400, 648, 120, 29 };
-            MergeSort<int> ms = new MergeSort<int>();
+            QuickSort<int> qs = new QuickSort<int>();
 
             //Act
-            ms.Sort(elements);
+            qs.Sort(elements);
 
             //Assert
             int[] sortedElements = { -3004, -400, -4, 2, 29, 50, 67, 68, 120, 194, 350, 648, 900, 2890 };

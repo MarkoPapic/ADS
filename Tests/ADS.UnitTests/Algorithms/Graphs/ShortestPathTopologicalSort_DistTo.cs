@@ -1,19 +1,27 @@
 ﻿using ADS.Algorithms.Graphs;
 using ADS.DataStructures;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Xunit;
 
-namespace ADS.Algorithms.UnitTests
+namespace ADS.UnitTests.Algorithms.Graphs
 {
-    public class ShortestPathDijkstra_PathTo
+    public class ShortestPathTopologicalSort_DistTo
     {
         [Fact]
         public void HappyPath_ShortestDistancesReturned()
         {
             //Arrange
+            Dictionary<int, double> expectedDistances = new Dictionary<int, double>
+            {
+                { 1, 0.0 },
+                { 2, 5.0 },
+                { 3, 14.0 },
+                { 4, 17.0 },
+                { 5, 9.0 },
+                { 6, 13.0 },
+                { 7, 25.0 },
+                { 8, 8.0 },
+            };
             EdgeWeightedDigraph graph = new EdgeWeightedDigraph(8);
             DirectedEdge[] edges = new DirectedEdge[]
             {
@@ -34,29 +42,17 @@ namespace ADS.Algorithms.UnitTests
                 new DirectedEdge(8, 3, 7),
                 new DirectedEdge(8, 6, 6)
             };
-            Dictionary<int, DirectedEdge[]> expectedPaths = new Dictionary<int, DirectedEdge[]>
-            {
-                { 1, new DirectedEdge[] { } },
-                { 2, new DirectedEdge[] { edges[0] } },
-                { 3, new DirectedEdge[] { edges[2], edges[10], edges[12] } },
-                { 4, new DirectedEdge[] { edges[2], edges[10], edges[12], edges[6] } },
-                { 5, new DirectedEdge[] { edges[2] } },
-                { 6, new DirectedEdge[] { edges[2], edges[10] } },
-                { 7, new DirectedEdge[] { edges[2], edges[10], edges[12], edges[7] } },
-                { 8, new DirectedEdge[] { edges[1] } },
-            };
             foreach (var edge in edges)
                 graph.AddEdge(edge);
 
             //Act
-            ShortestPathDijkstra spd = new ShortestPathDijkstra(graph, 1);
+            ShortestPathTopologicalSort spd = new ShortestPathTopologicalSort(graph, 1);
 
             //Assert
             for (int i = 1; i <= 8; i++)
             {
-                DirectedEdge[] pathTo = spd.PathTo(i).ToArray();
-                DirectedEdge[] expectedPath = expectedPaths[i];
-                Assert.True(expectedPath.SequenceEqual(pathTo));
+                var distanceTo = spd.DistTo(i);
+                Assert.Equal(distanceTo, expectedDistances[i]);
             }
         }
     }

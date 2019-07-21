@@ -3,7 +3,7 @@ using ADS.DataStructures;
 using System.Linq;
 using Xunit;
 
-namespace ADS.Algorithms.UnitTests
+namespace ADS.UnitTests.Algorithms.Graphs
 {
     public class TopologicalSortDfs_Order
     {
