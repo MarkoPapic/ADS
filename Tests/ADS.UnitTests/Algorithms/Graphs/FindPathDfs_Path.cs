@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using Xunit;
 
-namespace ADS.Algorithms.UnitTests
+namespace ADS.UnitTests.Algorithms.Graphs
 {
     public class FindPathDfs_Path
     {

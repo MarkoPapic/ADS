@@ -1,0 +1,76 @@
+﻿using System;
+
+namespace ADS.DataStructures
+{
+    /// <summary>
+    /// R-way trie that works with the keys that consists of English lowercase letters (a-z).
+    /// </summary>
+    /// <typeparam name="T">Elements type.</typeparam>
+    public class TrieRWay<T>
+    {
+        private const int R = 26;
+        private Node root;
+
+        public void Insert(string key, T val)
+        {
+            root = Insert(root, key, val, 0);
+        }
+
+        public T Get(string key)
+        {
+            Node x = Get(root, key, 0);
+            if (x == null)
+                throw new InvalidOperationException("No value with the given rank exists in the collection.");
+            return x.Value;
+        }
+
+        public bool ContainsKey(string key)
+        {
+            Node x = Get(root, key, 0);
+            return x != null;
+        }
+
+        private Node Insert(Node x, string key, T val, int d)
+        {
+            if (x == null)
+                x = new Node();
+            if (d == key.Length)
+            {
+                x.Value = val;
+                return x;
+            }
+            char c = key[d];
+            int i = GetIndexFromChar(c);
+            x.Next[i] = Insert(x.Next[i], key, val, d + 1);
+            return x;
+        }
+
+        private Node Get(Node x, string key, int d)
+        {
+            if (x == null)
+                return null;
+            if (d == key.Length)
+                return x;
+            char c = key[d];
+            int i = GetIndexFromChar(c);
+            return Get(x.Next[i], key, d + 1);
+        }
+
+        private int GetIndexFromChar(char c)
+        {
+            int ascii = (int)c;
+            return ascii - 97;
+        }
+
+        private class Node
+        {
+            public Node()
+            {
+                Next = new Node[R];
+            }
+
+            internal T Value { get; set; }
+            internal Node[] Next { get; set; }
+        }
+    }
+}

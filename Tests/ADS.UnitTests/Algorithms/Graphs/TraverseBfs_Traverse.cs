@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Xunit;
 using static ADS.Algorithms.Graphs.TraverseBfs;
 
-namespace ADS.Algorithms.UnitTests
+namespace ADS.UnitTests.Algorithms.Graphs
 {
     public class TraverseBfs_Traverse
     {
