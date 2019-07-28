@@ -35,6 +35,7 @@ dotnet add package ADS --version 0.0.1
 * Digraph
 * Edge-weighted graph
 * Edge-weighted digraph
+* R-way trie
 
 ### Algorithms
 
@@ -48,3 +49,5 @@ dotnet add package ADS --version 0.0.1
   * Find the shortest path between the two vertices in a graph with nonnegative weights using Dijkstra's algorithm
   * Find the shortest path between the two vertices in a direct acyclic graph using topological sort
 * Find the maximum sub-array of a 1D array using Kadane's algorithm
+* Mergesort
+* Quicksort
