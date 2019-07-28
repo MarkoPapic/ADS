@@ -22,8 +22,8 @@ namespace ADS.UnitTests.DataStructures.TrieRWay
             //Assert
             foreach (var el in elements)
             {
-                bool exists = trie.ContainsKey(el.Item1);
-                Assert.True(exists);
+                int found = trie.Get(el.Item1);
+                Assert.Equal(el.Item2, found);
             }
         }
 
