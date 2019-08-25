@@ -6,15 +6,20 @@ namespace ADS.Algorithms.DynamicConnectivity
 {
     public abstract class UnionFind
     {
-        private int[] id;
+        protected int[] id;
+        protected int _count;
 
-        public int Count => id.Length;
+        /// <summary>
+        /// Number of connected components.
+        /// </summary>
+        public int Count => _count;
 
         public UnionFind(int n)
         {
             id = new int[n];
             for (int i = 0; i < n; i++)
                 id[i] = i;
+            _count = n;
         }
 
         public bool Connected(int p, int q)
