@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ADS.UnitTests.Algorithms.DynamicConnectivity
+namespace ADS.Algorithms.DynamicConnectivity
 {
     public abstract class UnionFind
     {
