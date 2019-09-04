@@ -33,7 +33,10 @@ namespace ADS.Algorithms.Strings
 
         public int Search(string s)
         {
-            int i, j, N = s.Length, M = pat.Length;
+            int i;
+            int j;
+            int N = s.Length;
+            int M = pat.Length;
             for (i = 0, j = 0; i < N && j < M; i++)
                 j = dfa[alphabet.ToIndex(s[i]), j];
             return j == M ? i - M : -1;
