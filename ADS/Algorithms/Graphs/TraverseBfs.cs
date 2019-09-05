@@ -19,7 +19,7 @@ namespace ADS.Algorithms.Graphs
         /// <param name="action">Action that will be performed on each visited vertice.</param>
         public static void Traverse(this IGraph graph, int start, Action<int> action)
         {
-            bool[] visited = new bool[graph.V + 1];
+            bool[] visited = new bool[graph.V];
             Queue<int> toVisit = new Queue<int>();
             toVisit.Enqueue(start);
             visited[start] = true;

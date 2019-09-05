@@ -12,9 +12,9 @@ namespace ADS.Algorithms.Graphs
         {
             reversePostOrder = new LinkedList<int>();
             //We avoid using index 0, because we save it for special cases
-            visited = new bool[graph.V + 1];
+            visited = new bool[graph.V];
             //We need to iterate in case graph is not connected. This way we will traverse the whole graph.
-            for (int v = 1; v <= graph.V; v++)
+            for (int v = 0; v < graph.V; v++)
                 if (!visited[v])
                     Dfs(graph, v);
         }
@@ -25,9 +25,9 @@ namespace ADS.Algorithms.Graphs
         {
             reversePostOrder = new LinkedList<int>();
             //We avoid using index 0, because we save it for special cases
-            visited = new bool[graph.V + 1];
+            visited = new bool[graph.V];
             //We need to iterate in case graph is not connected. This way we will traverse the whole graph.
-            for (int v = 1; v <= graph.V; v++)
+            for (int v = 0; v < graph.V; v++)
                 if (!visited[v])
                     Dfs(graph, v);
         }

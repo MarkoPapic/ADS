@@ -23,9 +23,9 @@ namespace ADS.Algorithms.Strings
                 right[alphabet.ToIndex(pat[j])] = j;
         }
 
-        public int Search(string txt)
+        public int Search(string s)
         {
-            int N = txt.Length;
+            int N = s.Length;
             int M = pat.Length;
             int skip;
             for (int i = 0; i <= N - M; i += skip)
@@ -33,9 +33,9 @@ namespace ADS.Algorithms.Strings
                 skip = 0;
                 for (int j = M - 1; j >= 0; j--)
                 {
-                    if (pat[j] != txt[i + j])
+                    if (pat[j] != s[i + j])
                     {
-                        skip = j - right[alphabet.ToIndex(txt[i + j])];
+                        skip = j - right[alphabet.ToIndex(s[i + j])];
                         if (skip < 1) skip = 1;
                         break;
                     }

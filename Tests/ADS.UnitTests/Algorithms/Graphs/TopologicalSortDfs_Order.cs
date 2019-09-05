@@ -11,8 +11,8 @@ namespace ADS.UnitTests.Algorithms.Graphs
         public void HappyPathUnweighted_OrderedCorrectly()
         {
             //Arrange
-            (int, int)[] edges = new (int, int)[] { (1, 2), (1, 6), (1, 3), (2, 5), (4, 7), (4, 3), (4, 6), (4, 5), (6, 3), (7, 1), (7, 5) };
-            int[] expectedOrder = new int[] { 4, 7, 1, 6, 3, 2, 5 };
+            (int, int)[] edges = new (int, int)[] { (0, 1), (0, 2), (0, 5), (1, 4), (3, 6), (3, 2), (3, 5), (3, 4), (5, 2), (6, 0), (6, 4) };
+            int[] expectedOrder = new int[] { 3, 6, 0, 5, 2, 1, 4 };
             Digraph digraph = new Digraph(7);
             foreach (var edge in edges)
                 digraph.AddEdge(edge.Item1, edge.Item2);
@@ -30,19 +30,19 @@ namespace ADS.UnitTests.Algorithms.Graphs
         {
             //Arrange
             DirectedEdge[] edges = new DirectedEdge[] {
-                new DirectedEdge(1, 2, 5),
-                new DirectedEdge(1, 6, 2),
-                new DirectedEdge(1, 3, -5),
-                new DirectedEdge(2, 5, 30),
-                new DirectedEdge(4, 7, 2.34),
-                new DirectedEdge(4, 3, 17.5),
-                new DirectedEdge(4, 6, 8),
-                new DirectedEdge(4, 5, 0),
-                new DirectedEdge(6, 3, -14),
-                new DirectedEdge(7, 1, -158),
-                new DirectedEdge(7, 5, 20)
+                new DirectedEdge(0, 1, 5),
+                new DirectedEdge(0, 2, 2),
+                new DirectedEdge(0, 5, -5),
+                new DirectedEdge(1, 4, 30),
+                new DirectedEdge(3, 6, 2.34),
+                new DirectedEdge(3, 2, 17.5),
+                new DirectedEdge(3, 5, 8),
+                new DirectedEdge(3, 4, 0),
+                new DirectedEdge(5, 2, -14),
+                new DirectedEdge(6, 0, -158),
+                new DirectedEdge(6, 4, 20)
             };
-            int[] expectedOrder = new int[] { 4, 7, 1, 6, 3, 2, 5 };
+            int[] expectedOrder = new int[] { 3, 6, 0, 5, 2, 1, 4 };
             EdgeWeightedDigraph digraph = new EdgeWeightedDigraph(7);
             foreach (DirectedEdge edge in edges)
                 digraph.AddEdge(edge);
