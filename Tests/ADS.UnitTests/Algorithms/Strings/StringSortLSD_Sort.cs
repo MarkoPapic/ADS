@@ -1,7 +1,5 @@
 ﻿using ADS.Algorithms.Strings;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using Xunit;
 
 namespace ADS.UnitTests.Algorithms.Strings
@@ -20,7 +18,7 @@ namespace ADS.UnitTests.Algorithms.Strings
             ss.Sort(strings, 7);
 
             //Assert
-            Assert.Equal(strings, strings);
+            Assert.True(expected.SequenceEqual(strings));
         }
     }
 }
