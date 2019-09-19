@@ -17,10 +17,10 @@ namespace ADS.Algorithms.Graphs
         public ShortestPathBase(EdgeWeightedDigraph G, int s)
         {
             //We avoid using index 0, because we save it for special cases
-            edgeTo = new DirectedEdge[G.V + 1];
-            distTo = new double[G.V + 1];
+            edgeTo = new DirectedEdge[G.V];
+            distTo = new double[G.V];
             this.s = s;
-            for (int v = 1; v <= G.V; v++)
+            for (int v = 0; v < G.V; v++)
                 this.distTo[v] = double.PositiveInfinity;
             this.distTo[s] = 0.0;
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ADS.Algorithms.Strings;
+using System;
 
 namespace ADS.DataStructures
 {
@@ -8,8 +9,16 @@ namespace ADS.DataStructures
     /// <typeparam name="T">Elements type.</typeparam>
     public class TrieRWay<T>
     {
-        private const int R = 26;
+        private readonly int R;
         private Node root;
+
+        private readonly IAlphabet alphabet;
+
+        public TrieRWay(IAlphabet alphabet)
+        {
+            this.alphabet = alphabet;
+            this.R = alphabet.R;
+        }
 
         public void Insert(string key, T val)
         {
@@ -33,14 +42,14 @@ namespace ADS.DataStructures
         private Node Insert(Node x, string key, T val, int d)
         {
             if (x == null)
-                x = new Node();
+                x = new Node(R);
             if (d == key.Length)
             {
                 x.Value = val;
                 return x;
             }
             char c = key[d];
-            int i = GetIndexFromChar(c);
+            int i = alphabet.ToIndex(c);
             x.Next[i] = Insert(x.Next[i], key, val, d + 1);
             return x;
         }
@@ -52,21 +61,15 @@ namespace ADS.DataStructures
             if (d == key.Length)
                 return x;
             char c = key[d];
-            int i = GetIndexFromChar(c);
+            int i = alphabet.ToIndex(c);
             return Get(x.Next[i], key, d + 1);
-        }
-
-        private int GetIndexFromChar(char c)
-        {
-            int ascii = (int)c;
-            return ascii - 97;
         }
 
         private class Node
         {
-            public Node()
+            public Node(int r)
             {
-                Next = new Node[R];
+                Next = new Node[r];
             }
 
             internal T Value { get; set; }

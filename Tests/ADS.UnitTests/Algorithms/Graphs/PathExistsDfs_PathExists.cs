@@ -16,7 +16,7 @@ namespace ADS.UnitTests.Algorithms.Graphs
         {
             //Arrange
             (int, int)[] edges = new (int, int)[] { (1, 8), (1, 4), (4, 8), (1, 5), (2, 5), (3, 5), (3, 9), (6, 7), (5, 10) };
-            Graph graph = new Graph(10);
+            Graph graph = new Graph(11);
             foreach ((int, int) edge in edges)
                 graph.AddEdge(edge.Item1, edge.Item2);
             PathExsitsDfs pathExsitsDfs = new PathExsitsDfs();
@@ -37,7 +37,7 @@ namespace ADS.UnitTests.Algorithms.Graphs
         {
             //Arrange
             (int, int)[] edges = new (int, int)[] { (1, 8), (1, 4), (4, 8), (1, 5), (2, 5), (3, 5), (3, 9), (6, 7), (5, 10) };
-            Graph graph = new Graph(10);
+            Graph graph = new Graph(11);
             foreach ((int, int) edge in edges)
                 graph.AddEdge(edge.Item1, edge.Item2);
             PathExsitsDfs pathExsitsDfs = new PathExsitsDfs();

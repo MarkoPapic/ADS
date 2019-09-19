@@ -22,8 +22,8 @@ namespace ADS.Algorithms.Graphs
         {
             this.referentVertex = r;
             //We avoid using index 0, because we save it for special cases
-            this.marked = new bool[G.V + 1];
-            this.edgeTo = new int[G.V + 1];
+            this.marked = new bool[G.V];
+            this.edgeTo = new int[G.V];
 
             Dfs(G, r);
         }

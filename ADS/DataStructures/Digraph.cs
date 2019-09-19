@@ -17,8 +17,8 @@ namespace ADS.DataStructures
         {
             this._v = V;
             //We avoid using index 0, because we save it for special cases
-            this.adj = new DynamicArray<int>[V + 1];
-            for (int i = 1; i <= V; i++)
+            this.adj = new DynamicArray<int>[V];
+            for (int i = 0; i < V; i++)
                 adj[i] = new DynamicArray<int>();
         }
 
@@ -39,7 +39,7 @@ namespace ADS.DataStructures
 
         private void ThrowIfOutOfRange(int index)
         {
-            if (index < 0 || index > this.V)
+            if (index < 0 || index >= this.V)
                 throw new IndexOutOfRangeException();
         }
     }

@@ -14,7 +14,7 @@ namespace ADS.UnitTests.Algorithms.Graphs
         public void HappyPath_ShortestDistancesReturned()
         {
             //Arrange
-            EdgeWeightedDigraph graph = new EdgeWeightedDigraph(8);
+            EdgeWeightedDigraph graph = new EdgeWeightedDigraph(9);
             DirectedEdge[] edges = new DirectedEdge[]
             {
                 new DirectedEdge(1, 2, 5),

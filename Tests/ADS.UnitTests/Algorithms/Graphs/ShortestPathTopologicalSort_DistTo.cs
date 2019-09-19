@@ -22,7 +22,7 @@ namespace ADS.UnitTests.Algorithms.Graphs
                 { 7, 25.0 },
                 { 8, 8.0 },
             };
-            EdgeWeightedDigraph graph = new EdgeWeightedDigraph(8);
+            EdgeWeightedDigraph graph = new EdgeWeightedDigraph(9);
             DirectedEdge[] edges = new DirectedEdge[]
             {
                 new DirectedEdge(1, 2, 5),

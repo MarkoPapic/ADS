@@ -22,7 +22,7 @@ namespace ADS.Algorithms.Graphs
         public void Traverse(IGraph graph, int start, Action<int> action)
         {
             //We avoid using index 0, because we save it for special cases
-            visited = new bool[graph.V + 1];
+            visited = new bool[graph.V];
             Dfs(graph, start, action);
         }
 

@@ -1,7 +1,5 @@
-﻿using ADS.DataStructures;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ADS.Algorithms.Strings;
+using ADS.DataStructures;
 using Xunit;
 
 namespace ADS.UnitTests.DataStructures.TrieRWay
@@ -13,7 +11,7 @@ namespace ADS.UnitTests.DataStructures.TrieRWay
         {
             //Arrange
             (string, int)[] elements = new (string, int)[] { ("one",1), ("five",5), ("nine", 9), ("two", 2), ("three", 3), ("six", 6), ("four", 4), ("seven", 7), ("eight", 8) };
-            TrieRWay<int> trie = new TrieRWay<int>();
+            TrieRWay<int> trie = new TrieRWay<int>(new AsciiAlphabet());
 
             //Act
             foreach (var el in elements)
@@ -22,8 +20,8 @@ namespace ADS.UnitTests.DataStructures.TrieRWay
             //Assert
             foreach (var el in elements)
             {
-                bool exists = trie.ContainsKey(el.Item1);
-                Assert.True(exists);
+                int found = trie.Get(el.Item1);
+                Assert.Equal(el.Item2, found);
             }
         }
 
@@ -33,7 +31,7 @@ namespace ADS.UnitTests.DataStructures.TrieRWay
             //Arrange
             (string, int) duplicate = ("nine", 24);
             (string, int)[] elements = new (string, int)[] { ("one", 1), ("five", 5), ("nine", 9), ("two", 2), ("three", 3), ("six", 6), ("four", 4), ("seven", 7), ("eight", 8) };
-            TrieRWay<int> trie = new TrieRWay<int>();
+            TrieRWay<int> trie = new TrieRWay<int>(new AsciiAlphabet());
 
             //Act
             foreach (var el in elements)
