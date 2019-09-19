@@ -10,13 +10,13 @@ C# implementations of some algorithms and data structures.
 Visual Studio Package Manager Console:
 
 ```
-Install-Package ADS -Version 0.0.1
+Install-Package ADS -Version 0.0.3
 ```
 
 dotnet CLI:
 
 ```
-dotnet add package ADS --version 0.0.1
+dotnet add package ADS --version 0.0.3
 ```
 
 ## Content
